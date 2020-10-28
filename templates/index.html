@@ -1,0 +1,67 @@
+<html>
+    <body>
+        <div class = 'login'>
+            <form action="{{ url_for('predict')}}" method="post"> 
+            <input type="datetime-local", name="Dep_Time", placeholder="Departure Date", required = " = required"/><br><br>
+            <input type="datetime-local", name="Arrival_Time", placeholder="Arrival Date", required = "required"><br><br>
+          
+            <label class="label">Source</label>
+                <select name="Source" required>
+                    <option disabled="disabled" selected="selected">Choose option</option>
+                    <option value = "Delhi">Delhi</option>
+                    <option value = "Kolkata">Kolkata</option>
+                    <option value = "Mumbai">Mumbai</option>
+                    <option value = "Chennai">Chennai</option>
+                </select>
+                 <br>
+                 <br>
+
+            <label class="label">Destination</label>
+                <select name="Destination" required>
+                    <option disabled="disabled" selected="selected">Choose option</option>
+                    <option value = "Cochin">Cochin</option>
+                    <option value = "Delhi">Delhi</option>
+                    <option value = "New Delhi">New_Delhi</option>
+                    <option value = "Hyderabad">Hyderabad</option>
+                    <option value = "Kolkata">Kolkata</option>
+                </select>    
+                  <br>
+                  <br>
+
+            <label class="label">Total Stop</label>
+                <select name="Total_Stops" required>
+                      <option disabled="disabled" selected="selected">Choose option</option>
+                      <option value = "0">Non-Stop</option>
+                      <option value = "1">1</option>
+                      <option value = "2">2</option>
+                      <option value = "3">3</option>
+                      <option value = "4">4</option>
+                  </select>    
+                    <br>
+                    <br>
+
+                <label class="label">Select the Airlines</label>
+                    <select name="airline" required>
+                          <option disabled="disabled" selected="selected">Choose option</option>
+                          <option value = "Jet Airways">Jet Airways</option>
+                          <option value = "IndiGo">IndiGo</option>
+                          <option value = "Air India">Air India</option>
+                          <option value = "Multiple carriers">Multiple carriers</option>
+                          <option value = "SpiceJet">SpiceJet</option>
+                          <option value = "Vistara">Vistara</option>
+                          <option value = "GoAir">GoAir</option>
+                          <option value = "Multiple carriers Premium economy">Multiple carriers Premium economy</option>
+                          <option value = "Jet Airways Business">Jet Airways Business</option>
+                          <option value = "Vistara Premium economy">Vistara Premium economy</option>
+                          <option value = "Trujet">Trujet</option>    
+                      </select>    
+                      <br>
+                      <br>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </form>
+    <br>
+    <br>
+    {{ prediction_text }}
+        </div>
+    </body>
+</html>
